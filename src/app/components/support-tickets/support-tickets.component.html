@@ -1,0 +1,9 @@
+<app-new-ticket (addTicket)="addTicket($event)" />
+@for (ticket of tickets(); track $index) {
+<app-ticket
+  [ticketData]="ticket"
+  (onComplete)="onComplete(ticket.id)"
+></app-ticket>
+} @empty {
+<p>No tickets available.</p>
+}
